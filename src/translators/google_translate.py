@@ -24,6 +24,7 @@ The full current list can be obtained via:
 https://googleapis.dev/python/translation/latest/client.html
 
 """
+import os
 
 # v2 is a basic translation, there is also v3, but it's not needed for our use-cases
 # See: https://cloud.google.com/translate/docs/editions
@@ -34,17 +35,17 @@ from translators.translator import Translator
 
 class GoogleTranslate(Translator):
     
-    KEY_PATH = os.path.join('config', '...')    
+    auth_key_path = os.path.join('config', 'useg-395913-05f904c17367.json')
     
     def __init__(self, data_path, enable_api=False):
         super().__init__(data_path)
         self.enable_api = enable_api
         
         if self.enable_api:
-            self.client = translate_v2.Client.from_service_account_json(self.KEY_PATH)
+            self.client = translate_v2.Client.from_service_account_json(self.auth_key_path)
 
     
-    def _call_translation(self, text) -> Dict:
+    def _call_translation(self, text):
         """
         Sometimes this function return errors, e.g., texts in Sorani Kurdish cause BadRequest (as of July 2022).
         

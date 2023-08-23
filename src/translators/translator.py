@@ -72,7 +72,7 @@ class Translator:
         self.log_counter += 1
 
     
-    def translate(self, texts, graceful=1):
+    def translate(self, texts, graceful=1, save=False):
         """
         `graceful`:
           - 0 - Exceptions will stop the translation
@@ -85,8 +85,11 @@ class Translator:
             
         not_translated = set(texts) - set(self.dataframe.index)
         if not_translated:
-            translations = self.create_translations(not_translated, graceful)
+            translations = self.create_translations(not_translated, graceful, save)
             self.dataframe = pd.concat([self.dataframe, translations])
+
+            if save:
+                self.save()
             
         translations = {
             text: self.dataframe.loc[text].to
@@ -94,13 +97,13 @@ class Translator:
             if text in self.dataframe.index
         }
         
-        if (diff := len(texts) - len(translations)) > 0:
+        if (diff := len(set(texts)) - len(translations)) > 0:
             self.logger.info(f'Missing translations: {diff}')
         
         return translations
 
         
-    def create_translations(self, texts, graceful=1):
+    def create_translations(self, texts, graceful=1, save=False):
         translations = pd.DataFrame(columns=['from', 'to']).set_index('from')
 
         for text in tqdm.tqdm(texts):
@@ -109,6 +112,9 @@ class Translator:
                 
             except Exception as e:
                 if graceful == 0:
+                    if save:
+                        self.dataframe = pd.concat([self.dataframe, translations])     
+                        self.save()
                     raise e
                 if graceful == 1:
                     self.logger.warning(f'The following exception has occured during the translation of: "{text}"\n\n{traceback.format_exc()}')
