@@ -37,8 +37,10 @@ class GoogleTranslate(Translator):
     
     auth_key_path = os.path.join('config', 'useg-395913-05f904c17367.json')
     
-    def __init__(self, data_path, enable_api=False):
+    def __init__(self, data_path, target_language, enable_api=False):
+        data_path = os.path.join(data_path, target_language)
         super().__init__(data_path)
+        self.target_language = target_language
         self.enable_api = enable_api
         
         if self.enable_api:
@@ -58,7 +60,7 @@ class GoogleTranslate(Translator):
         response = self.client.translate(
             text,
             source_language='en',
-            target_language='sk',
+            target_language=self.target_language,
             format_='text',  # `text` is needed because default `format_='html'` escapes special characters
         )
         
