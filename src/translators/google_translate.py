@@ -38,9 +38,7 @@ class GoogleTranslate(Translator):
     auth_key_path = os.path.join('config', 'useg-395913-05f904c17367.json')
     
     def __init__(self, data_path, target_language, enable_api=False):
-        data_path = os.path.join(data_path, target_language)
-        super().__init__(data_path)
-        self.target_language = target_language
+        super().__init__(data_path, target_language)
         self.enable_api = enable_api
         
         if self.enable_api:

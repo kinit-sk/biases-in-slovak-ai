@@ -10,8 +10,8 @@ class AmazonTranslate(Translator):
     aws_secret_key = open(os.path.join('config', 'aws_secret_key')).read()
     region = 'us-west-2'
     
-    def __init__(self, data_path, enable_api=False):
-        super().__init__(data_path)
+    def __init__(self, data_path, target_language, enable_api=False):
+        super().__init__(data_path, target_language)
         self.enable_api = enable_api
         
         if self.enable_api:
@@ -36,7 +36,7 @@ class AmazonTranslate(Translator):
         response = self.client.translate_text(
             Text=text,
             SourceLanguageCode='en',
-            TargetLanguageCode='sk',
+            TargetLanguageCode=self.target_language,
         )
         
         return response['TranslatedText']

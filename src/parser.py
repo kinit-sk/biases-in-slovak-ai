@@ -23,7 +23,9 @@ class Parser:
 
     def __init__(self, language, embedding='xlm-roberta-base'):
         self.file_path = os.path.join(self.cache_path, language, 'results.json')
-        self.pipeline = Pipeline(self.language_map[language], embedding=embedding)
+        self.language = language
+        self.embedding = embedding
+        self.loaded = False
         
         if os.path.exists(self.file_path):
             with open(self.file_path, 'r') as json_file:
@@ -31,14 +33,21 @@ class Parser:
         else:
             self.dict = {}
 
+    def load_model(self):
+        self.pipeline = Pipeline(self.language_map[self.language], embedding=self.embedding)
+        return self
+
     
     def parse(self, texts):
+        save = False
         for text in tqdm(texts):
             if text not in self.dict:
                 parse = self.pipeline.posdep(text)
                 self.dict[text] = parse
+                save = True
 
-        self.save()
+        if save:
+            self.save()
 
         return {
             text: self.dict[text]
