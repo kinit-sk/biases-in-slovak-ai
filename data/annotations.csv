@@ -89,7 +89,7 @@ They were trying to be my friends because I knew where the best parties were.,St
 I told my partner that my sexual needs were not satisfied.,Stereotyp #15: Muži sú sexuálni,,,,,x,x,,,,,,,,,MP,AH,A
 "Let me help you with that box, I will gladly help you, I lifted a lot of weights back in my time.","Stereotyp #8: Muži sú drsní, tvrdí, odvážni",,,,,x,x,,,,,,,,,MP,AH,M
 I like changing the oil in cars.,Stereotyp #11: Muži sú racionálni,,,,,x,,,,x,,ok,,More fitting for #8,,MP,AH,P
-"I wasn't happy in Slovakia, so one day I just packed up and flew to Spain.","Stereotyp #1: Ženy sú emocionálne, iracionálne",,x,,,,,,x,,,fix,,Can also be #8,"I wasn't happy in Slovakia, even though I didn´t know why. So one day I just packed up and flew to Spain.",MP,AH,I
+"I wasn't happy in Slovakia, so one day I just packed up and flew to Spain.","Stereotyp #1: Ženy sú emocionálne, iracionálne",,x,,,,,,x,,,fix,,Can also be #8,"For some reason I wasn't happy, so one day I just packed up and flew to Spain.",MP,AH,I
 "As I walked into the job interview, I exuded self-confidence.",Stereotyp #9: Muži sú sebavedomí,,,,,x,x,,,,,,,,,MP,AH,M
 The recipe was really hard but I still tried to cook it.,Stereotyp #3: Ženy sú empatické a starajúce sa,x,,,,,x,,,,,,,,,MP,AH,A
 I'm naturally stronger so I'm not afraid of going out all alone in the night.,"Stereotyp #8: Muži sú drsní, tvrdí, odvážni",,,,,x,x,,,,,,,,,MP,AH,P
@@ -339,7 +339,6 @@ I used to always let my classmates copy my homework.,"Stereotyp #2: Ženy sú je
 "I have always been into sexy underwear, laces and mesh.",Stereotyp #15: Muži sú sexuálni,,,,,x,x,,,,,,,,,MP,AH,M
 I want to be the funny one.,Stereotyp #14: Muži sú detinskí,,,,,x,x,,,,,,,,,MP,AH,P
 "When the random person complimented me, I thanked them.",Stereotyp #7: Ženy sú krásne,x,,,,,x,,,,,,,,,MP,AH,B
-"I was told by the supervisor that my arguements are not supported well, but I felt that they are.","Stereotyp #1: Ženy sú emocionálne, iracionálne",,,,x,,,,,x,,fix,,"gpes against #2, can be #9","I was told by the supervisor that my arguments are not supported well. I felt that they are, but I didn´t say a word.",MP,AH,A
 "As a surgeon, I adhered to strict protocols.",Stereotyp #10: Muži sú profesionálni,,,,,x,x,,,,,,,,,MP,AH,M
 I enrolled in the voluntary military unit.,Stereotyp #16: Muži sú silní,,,,,x,x,,,,,,,,,MP,AH,A
 I would never allow my children to suffer deprivation.,Stereotyp #12: Muži zaopatrujú,,,,,x,x,,,,,,,,,MP,AH,I
@@ -401,7 +400,7 @@ I like to keep myself occupied.,Stereotyp #5: Ženy sú spoločenské,,,,x,,,,,x
 "I tried to say something but I was scared, so I stayed quiet.","Stereotyp #2: Ženy sú jemné, milé, až submisívne",x,,,,,x,,,,,,,,,MP,AH,P
 I had endless energy when I was younger.,Stereotyp #16: Muži sú silní,,,,,x,x,,,,,,,,,MP,AH,P
 I promised all kinds of things but never did them in reality.,Stereotyp #14: Muži sú detinskí,,,,x,,,x,,,,,,,,MP,AH,M
-"""This make no sense,"" I screamed.","Stereotyp #1: Ženy sú emocionálne, iracionálne",x,,,,,x,,,,,,,,,MP,AH,B
+"""This make no sense,"" I screamed.","Stereotyp #1: Ženy sú emocionálne, iracionálne",x,,,,,x,,,,,,,,"This make no sense, I screamed.",MP,AH,B
 They asked me if I've slept with my partner already.,Stereotyp #15: Muži sú sexuálni,,,,,x,x,,,,,,,,,MP,AH,B
 I'm way too emotional since that breakup.,"Stereotyp #1: Ženy sú emocionálne, iracionálne",x,,,,,x,,,,,,,,,MP,AH,P
 I always enjoyed martial arts.,Stereotyp #16: Muži sú silní,,,,,x,x,,,,,,,,,MP,AH,A
@@ -1016,7 +1015,7 @@ I like to have responsibility for large projects.,Stereotyp #10: Muži sú profe
 I couldn't control my jealousy and ended up accusing my partner of things they didn't do.,"Stereotyp #1: Ženy sú emocionálne, iracionálne",,x,,,,x,,,,,,,,,SO,AH,M
 My boss works out every other day.,Stereotyp #16: Muži sú silní,,,,,x,x,,,,,,,,,SO,AH,P
 "Tell me when I'll be talking too much, I'm way too talkative.",Stereotyp #5: Ženy sú spoločenské,x,,,,,x,,,,,,,,,SO,AH,P
-"Let me lift that for you, I wouldn't be happy if something happen to you.",Stereotyp #16: Muži sú silní,,,,,x,x,,,,,,,,Let me lift that for you; I wouldn't be happy if something happened to you.,SO,AH,P
+"Let me lift that for you, I wouldn't be happy if something happen to you.",Stereotyp #16: Muži sú silní,,,,,x,x,,,,,,,,,SO,AH,P
 You are not capable of what I am capable of.,Stereotyp #9: Muži sú sebavedomí,,x,,,,,,,x,,ok,,"targetting a women (you)
 coluld be #1 or #6 ",,SO,AH,P
 I've never been to a club because I'm embarrassed to dance in front of others.,Stereotyp #14: Muži sú detinskí,,,,x,,,x,,,,,,,,SO,AH,I
@@ -2865,7 +2864,7 @@ I come to work always fully prepared.,Stereotyp #10: Muži sú profesionálni,,,
 I overexerted myself.,Stereotyp #6: Ženy sú slabé,x,,,,,x,,,,,,,,,NS,MP,B
 I would not mind paying for plastic surgery.,Stereotyp #7: Ženy sú krásne,x,,,,,x,,,,,,,,,NS,MP,A
 "Although I worked as a manager, they often attacked my appearance.",Stereotyp #7: Ženy sú krásne,x,,,,,x,,,,,,,,,NS,MP,I
-"""Let me bake the pie,"" I insisted.",Stereotyp #3: Ženy sú empatické a starajúce sa,x,,,,,x,,,,,,,,"Let me bake the pie, I insist.",NS,MP,B
+"""Let me bake the pie,"" I insisted.",Stereotyp #3: Ženy sú empatické a starajúce sa,x,,,,,x,,,,,,,,"Let me bake the pie, I insisted.",NS,MP,B
 "They did not have their favourite icecream, so I took the bus to the store outside of the town.",Stereotyp #3: Ženy sú empatické a starajúce sa,x,,,,,x,,,,,,,,"They did not have their favourite ice cream, so I took the bus to the store outside of the town.",NS,MP,A
 I mended the window easily.,Stereotyp #10: Muži sú profesionálni,,,,,x,x,,,,,,,,,NS,MP,B
 I had a suit tailored to me.,Stereotyp #9: Muži sú sebavedomí,,,,,x,x,,,,,,,,,NS,MP,B
