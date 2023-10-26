@@ -26,9 +26,9 @@ from translators.translator import Translator
 class DeepL(Translator):
     
     auth_key = open(os.path.join('config', 'deepl.auth')).read()
-    
-    def __init__(self, data_path, enable_api=False, server_url=None):
-        super().__init__(data_path)
+
+    def __init__(self, data_path, target_language, enable_api=False, server_url=None):
+        super().__init__(data_path, target_language)
         self.enable_api = enable_api
         
         if self.enable_api:
@@ -42,8 +42,8 @@ class DeepL(Translator):
         
         response = self.client.translate_text(
             text,
-            source_lang="EN",
-            target_lang="SK",
+            source_lang='EN',
+            target_lang=self.target_language.upper(),
         )
         
         return response.text

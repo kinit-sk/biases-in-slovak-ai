@@ -11,11 +11,23 @@ from translators.translator import Translator
 class NLLB200(Translator):
     """
     A class for creating a translator model using the NLLB200 model.
-
     """
+
+    language_map = {
+        'be': 'bel_Cyrl',
+        'cs': 'ces_Latn',
+        'hr': 'hrv_Latn',
+        'pl': 'pol_Latn',
+        'ru': 'rus_Cyrl',
+        'sk': 'slk_Latn',
+        'sl': 'slv_Latn',
+        'sr': 'srp_Cyrl',
+        'uk': 'ukr_Cyrl',
+    }
      
-    def __init__(self, data_path, variant='3.3B', device=0): 
-        super().__init__(data_path)
+    def __init__(self, data_path, target_language, variant='3.3B', device=0): 
+        super().__init__(data_path, target_language)
+        self.target_language = self.language_map[target_language]
         self.model_name = self.get_model_name(variant)
         self.device = device
 
@@ -27,6 +39,16 @@ class NLLB200(Translator):
         super().load()
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_name)
+        self.pipeline = pipeline(
+            'translation',
+            model=self.model,
+            tokenizer=self.tokenizer,
+            src_lang='eng_Latn',
+            tgt_lang=self.target_language,
+            device=self.device,
+            max_length=512,
+            no_repeat_ngram_size=3,
+        )
         self.loaded = True
         return self
 
@@ -47,18 +69,5 @@ class NLLB200(Translator):
         """
         Translates batch of texts and returns the translated batch of texts.
         """                  
-
-        translation_pipeline = pipeline(
-            'translation',
-            model=self.model,
-            tokenizer=self.tokenizer,
-            src_lang='eng_Latn',
-            tgt_lang='slk_Latn',
-            device=self.device,
-            max_length=512,
-            no_repeat_ngram_size=3
-        )
-        
-
-        result = translation_pipeline(text, max_length=512)
+        result = self.pipeline(text, max_length=512)
         return result[0]['translation_text']
