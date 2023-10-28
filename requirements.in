@@ -3,3 +3,7 @@ google-cloud-translate
 openai
 trankit
 boto3
+unidecode
+transformers
+accelerate
+ipywidgets

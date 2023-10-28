@@ -8,7 +8,7 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, pipeline
 from translators.translator import Translator
 
 
-class NLLB200(Translator):
+class NLLB(Translator):
     """
     A class for creating a translator model using the NLLB200 model.
     """
@@ -25,8 +25,9 @@ class NLLB200(Translator):
         'uk': 'ukr_Cyrl',
     }
      
-    def __init__(self, data_path, target_language, variant='3.3B', device=0): 
-        super().__init__(data_path, target_language)
+    def __init__(self, dir_path, target_language, variant='3.3B', device=0): 
+        self.dir_path = dir_path
+        super().__init__(target_language)
         self.target_language = self.language_map[target_language]
         self.model_name = self.get_model_name(variant)
         self.device = device
