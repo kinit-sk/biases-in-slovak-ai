@@ -9,9 +9,11 @@ class AmazonTranslate(Translator):
     aws_access_key = open(os.path.join('config', 'aws_access_key')).read()
     aws_secret_key = open(os.path.join('config', 'aws_secret_key')).read()
     region = 'us-west-2'
+    dir_path = os.path.join('cache', 'translations', 'amazon_translate')
     
-    def __init__(self, data_path, target_language, enable_api=False):
-        super().__init__(data_path, target_language)
+    
+    def __init__(self, target_language, enable_api=False):
+        super().__init__(target_language)
         self.enable_api = enable_api
         
         if self.enable_api:

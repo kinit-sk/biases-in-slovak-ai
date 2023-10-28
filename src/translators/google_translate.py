@@ -36,9 +36,10 @@ from translators.translator import Translator
 class GoogleTranslate(Translator):
     
     auth_key_path = os.path.join('config', 'useg-395913-05f904c17367.json')
+    dir_path = os.path.join('cache', 'translations', 'google_translate')
     
-    def __init__(self, data_path, target_language, enable_api=False):
-        super().__init__(data_path, target_language)
+    def __init__(self, target_language, enable_api=False):
+        super().__init__(target_language)
         self.enable_api = enable_api
         
         if self.enable_api:

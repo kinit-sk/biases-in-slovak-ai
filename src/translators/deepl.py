@@ -26,9 +26,10 @@ from translators.translator import Translator
 class DeepL(Translator):
     
     auth_key = open(os.path.join('config', 'deepl.auth')).read()
+    dir_path = os.path.join('cache', 'translations', 'deepl')
 
-    def __init__(self, data_path, target_language, enable_api=False, server_url=None):
-        super().__init__(data_path, target_language)
+    def __init__(self, target_language, enable_api=False, server_url=None):
+        super().__init__(target_language)
         self.enable_api = enable_api
         
         if self.enable_api:

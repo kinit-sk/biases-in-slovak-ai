@@ -26,12 +26,12 @@ class Translator:
 
     The main call for `Translator` is translate. This function translates required texts and save them to a csv file. 
     """
-    def __init__(self, data_path, target_language):
+    def __init__(self, target_language):
         """
         Initialize the Translator class.
         """
         self.target_language = target_language
-        self.data_path = os.path.join(data_path, target_language)
+        self.data_path = os.path.join(self.dir_path, target_language)
         self.csv_path = os.path.join(self.data_path, 'translations.csv')
         os.makedirs(self.data_path, exist_ok=True)
         
