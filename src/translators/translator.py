@@ -66,9 +66,9 @@ class Translator:
         
         
     def log_translation(self, text, translation):
-        with open(os.path.join(self.log_path, f'{self.log_counter}.from'), 'w') as f:
+        with open(os.path.join(self.log_path, f'{self.log_counter}.from'), 'w', encoding='utf-8') as f:
             f.write(text)
-        with open(os.path.join(self.log_path, f'{self.log_counter}.to'), 'w') as f:
+        with open(os.path.join(self.log_path, f'{self.log_counter}.to'), 'w', encoding='utf-8') as f:
             f.write(translation)
         self.log_counter += 1
 

@@ -34,7 +34,7 @@ def calculate_logprob(sen1, sen2, tokenizer, model, device, diagnose=False):
         print('Token ids (masked):', masked_tokens['input_ids'][0])
         print('Tokens:', ', '.join('`' + tokenizer.decode([t]) + '`' for t in original_tokens['input_ids'][0]))
         print('Decoded token ids:', tokenizer.decode(original_tokens['input_ids'][0]))
-        print('Decoded token ids (masked):', tokenizer.decode(original_tokens['input_ids'][0]))
+        print('Decoded token ids (masked):', tokenizer.decode(masked_tokens['input_ids'][0]))
         print('Probs:', probs)
         print('Probs for correct tokens:', probs_true)
         print('Probs for masked tokens:', probs_true[mask_indices])
