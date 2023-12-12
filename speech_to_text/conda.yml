@@ -24,4 +24,4 @@ dependencies:
   - joblib
   - pip
   - pip:
-    - openai-whisper=20231117
+    - openai-whisper==20231117
