@@ -11,6 +11,7 @@ dependencies:
   - pytorch::torchaudio=2.1.0
   - pytorch::pytorch-cuda=11.8
   - torchmetrics=1.2.1
+  - pysoundfile=0.12.1
   - transformers=4.35.2
   - datasets=2.15.0
   - accelerate=0.25.0

@@ -14,3 +14,4 @@ openai-whisper==20231117
 torch==2.1.0
 torchaudio==2.1.0
 torchmetrics==1.2.1
+pysoundfile==0.12.1
