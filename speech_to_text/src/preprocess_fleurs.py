@@ -19,20 +19,17 @@ import config
 @click.command()
 @click.option('-d', '--data-dirpath', help='directory path containing dataset', required=True)
 @click.option('-o', '--output-path', help='path containing preprocessed dataset', required=True)
-@click.option('-c', '--cache-dirpath', help='path containing temporary files', required=False, default=None)
 def main(
       data_dirpath: str,
       output_path: str,
-      cache_dirpath: Optional[str],
 ):
   tqdm.tqdm.pandas()
 
-  if cache_dirpath is not None:
-    os.makedirs(cache_dirpath, exist_ok=True)
+  data_dirpath = os.path.normpath(data_dirpath)
 
   print('Downloading dataset')
 
-  fleurs_asr_sk = datasets.load_dataset('google/xtreme_s', 'fleurs.sk_sk', cache_dir=cache_dirpath)
+  fleurs_asr_sk = datasets.load_dataset('google/xtreme_s', 'fleurs.sk_sk', cache_dir=data_dirpath)
 
   print('Preprocessing dataset')
 
@@ -42,7 +39,7 @@ def main(
 
   df = df.rename(columns={'path': config.AUDIO_PATH_COL})
 
-  df[config.AUDIO_PATH_COL] = df[config.AUDIO_PATH_COL].apply(lambda p: os.path.join(*pathlib.Path(p).parts[-3:]))
+  df[config.AUDIO_PATH_COL] = df[config.AUDIO_PATH_COL].apply(lambda path: os.path.relpath(path, data_dirpath))
 
   bisk_preprocessing.preprocess_transcriptions(df, 'transcription', config.GROUND_TRUTH_COL)
 
@@ -56,10 +53,6 @@ def main(
 
   os.makedirs(os.path.dirname(output_path), exist_ok=True)
   df.to_parquet(output_path)
-
-  if cache_dirpath is not None:
-    print(f'Removing cached files')
-    shutil.rmtree(cache_dirpath)
 
 
 def _merge_subsets(fleurs_asr):
